@@ -4,14 +4,14 @@ from app import db
 
 class CommentsTest(unittest.TestCase):
     def setUp(self):
-        self.user_ruweydha = User(username='ruweydha', password ='potato', email = 'ruweydhaabdinoor@gmail.com')
+        self.user_ruweydha = User(username='mwikali', password ='apple', email = 'winniemwikali07@gmail.com')
         self.new_pitch = Pitches(title= 'Technology', content = 'Software development',user_id = self.user_ruweydha.id)
         self.new_comment = Comments(comment = 'You need to put more effort', pitch_id = self.new_pitch.id, user_id = self.user_ruweydha.id)
 
-    def tearDown(self):
-        Pitches.query.delete() 
+    def tearDown(self):   
         User.query.delete() 
         Comments.query.delete()
+        Pitches.query.delete() 
 
     def test_check_instance_variables(self) :
         self.assertEquals(self.new_comment.comment, 'You need to put more effort') 

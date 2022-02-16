@@ -13,7 +13,6 @@ class CommentsForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class PitchesForm(FlaskForm):
-
     title = StringField('Pitch title', validators=[DataRequired()])
     category = SelectField("Category", choices =[(1,'Finance'),(2,'Mental Health'),(3,'Technology')],validators=[DataRequired()])
     content = TextAreaField('Create a pitch', validators=[DataRequired()])
