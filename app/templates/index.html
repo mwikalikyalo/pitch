@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  {% if pitches %}
+<div class="container mb-5 pb-5" style="color: #023047;">
+  <h1 class="text-center">All pitches</h1>
+  <p class="text-center" style="font-weight: 500;"><em>At pitch-hub we love to hear your pitches and our users can give you feedback.</em></p>
+      <div class="row">
+        <div class="col-md-12">
+          {% for pitch in pitches %}
+          <div class="card mt-3" style="width: 70%; border-left: none; border-right: none;">
+            <div class="card-body d-flex justify-content-between">
+              <div>
+                <h5 class="text-center">{{pitch.pitcher.username}}</h5>
+              <p class="card-text">{{pitch.content}}</p>
+              </div>
+              <div>
+                <p class="card-text">{{pitch.date_posted.strftime('%Y-%m-%d')}}</p>
+                <button  class="btn btn-secondary btn-sm"><a style="color: #fff; text-decoration: none;" href="/user/comment/new/{{pitch.id}}" class="card-link">Comment</a></button>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+  </div>
+{% endif %}
+
+{% endblock %}

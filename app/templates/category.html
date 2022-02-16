@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if categories %}
+<h1 class="text-center" style="color: #023047 ;">Pitches</h1>
+{% for pitch in categories %}
+    
+    <div class="row">
+        <div class="card " style="width: 70%; border-left: none; border-right: none; margin: auto; background-color: #cfdbd5;">
+            <div class="card-body">
+              <h5>{{pitch.content}}</h5>
+              <a href="/user/comment/new/{{pitch.id}}" style="text-decoration: none; color: #e76f51; font-weight: 600;">Comment</a>
+            </div>
+          </div>
+        
+    </div>
+{% endfor %}
+{% else %}
+<h4 class="mt-2" style="color: #023047">No pitches submitted yet</h4>
+{% endif %}
+<div class="text-center mt-3">
+    <button class="btn btn-secondary btn-md"><a href="/user/pitch/new/{{current_user.id}}" style="text-decoration: none; color: white;">Write new pitch</a></button>
+</div>
+{% endblock %}
