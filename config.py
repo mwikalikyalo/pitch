@@ -1,7 +1,4 @@
-from distutils.command import config
-from distutils.debug import DEBUG
 import os
-
 
 class Config:
     '''
