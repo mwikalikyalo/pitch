@@ -1,5 +1,5 @@
-# Pitch-hub
-#### By Ruweydha Abdinoor.
+# Pitcher
+#### By Winifred Mwikali Kyalo.
 ## Description
 A website where a user can be able to view pitches from other people, comment on pitches, see pitches from any category and submit a pitch in any category. The app has a user authentication system where only registered users can post a pitch and comment on other pitches. They can pick the category on the navbar link
 ## Setup and Installation
@@ -10,7 +10,7 @@ A website where a user can be able to view pitches from other people, comment on
 2. Navigate to project folder
 
 ```bash
-cd Pitch-hub
+cd Pitch
 ```
 
 3. Create a virtual environment
@@ -65,11 +65,11 @@ None at the moment.
 
     
 ## Support and contact details
-LinkedIn - [Ruweydha Abdinoor](https://www.linkedin.com/in/ruweydha-abdinoor-859921224/) 
+Gmail - [Winifred Mwikali Kyalo](winniemwikali07@gmail.com) 
 ### License
 MIT License
 ​
-Copyright (c) [2022] [Ruweydha Abdinoor]
+Copyright (c) [2022] [Winifred Mwikali Kyalo]
 ​
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
