@@ -9,7 +9,7 @@ import markdown2
 @main.route('/')
 def index():
     pitches = Pitches.query.all()
-    return render_template('index.html', pitches = pitches, pitcher = pitches)
+    return render_template('index.html', pitches = pitches)
 
 @main.route('/user/<uname>') 
 def profile(uname):
@@ -51,11 +51,11 @@ def update_pic(uname):
 
     return redirect(url_for('main.profile',uname=uname))  
 
-@main.route('/user/pitch/new/<int:id>', methods =['GET', 'POST'])
+@main.route('/user/pitch', methods =['GET', 'POST'])
 @login_required
-def new_pitch(id):
+def new_pitch():
     form = PitchesForm()
-    user = User.query.filter_by(id = id).first()
+    user = current_user
 
     if form.validate_on_submit():
         title = form.title.data
@@ -66,7 +66,7 @@ def new_pitch(id):
         new_pitch.save_pitch()
         return redirect(url_for('.profile', uname = user.username ))
 
-    return render_template('new_pitch.html', pitch_form = form, user = user.username)
+    return render_template('pitch.html', pitch_form = form, user = user.username)
 
 @main.route('/user/comment/new/<int:id>', methods =["GET", "POST"])
 @login_required
